@@ -1,9 +1,3 @@
-$.get("http://localhost:3000/profile", (data) => {
-    if(data){
-        newPostBut.href="new-post.html";
-    }
-})
-
 const postTemplate = document.querySelector("[post-template]");
 const postContainer = document.querySelector("[post-container]");
 const searchInput = document.querySelector("[data-search]");
@@ -11,25 +5,35 @@ const newPostBut = document.querySelector("#new-post-button")
 
 let socket = io();
 
-socket.on("post", addPost)
+$(() => {
+    $.get("http://localhost:3000/profile", (data) => {
+        if(data){
+            newPostBut.href="new-post.html";
+        }
+    })
 
-showAllPosts()
 
-searchInput.addEventListener("input", (e) => {
-    const value = e.target.value.toLowerCase();
-    if(value == ""){return}
-    $(postContainer).children().each(function () {
-        $.get("http://localhost:3000/posts/" + this.getAttribute("data-post-id").toString(), post => {
-            const isVisible = post.title.toLowerCase().includes(value) || post.content.toLowerCase().includes(value)
-            this.classList.toggle("hide", !isVisible)
+    
+    socket.on("post", addPost)
+    
+    showAllPosts()
+    
+    searchInput.addEventListener("input", (e) => {
+        const value = e.target.value.toLowerCase();
+        if(value == ""){return}
+        $(postContainer).children().each(function () {
+            $.get("http://localhost:3000/posts/" + this.getAttribute("data-post-id").toString(), post => {
+                const isVisible = post.title.toLowerCase().includes(value) || post.content.toLowerCase().includes(value)
+                this.classList.toggle("hide", !isVisible)
+            })
         })
     })
-})
-
-document.addEventListener("click", () => {
-    $(postContainer).children().each(function () {
-        this.classList.toggle("hide", false)
-        searchInput.value = ""
+    
+    document.addEventListener("click", () => {
+        $(postContainer).children().each(function () {
+            this.classList.toggle("hide", false)
+            searchInput.value = ""
+        })
     })
 })
 

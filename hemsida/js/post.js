@@ -8,11 +8,11 @@ const userText = document.querySelector(".post-user");
 
 let socket = io();
 
-socket.on("comment", addComment)
-
-showPostAndComments()
-
 $(() =>{
+
+    socket.on("comment", addComment)
+
+    showPostAndComments()
     $("#comment-bar button").click(() => {
         $.get("http://localhost:3000/profile", (user) => {
             if(user){

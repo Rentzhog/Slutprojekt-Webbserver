@@ -30,8 +30,3 @@ $(() =>{
     });
 
 });
-
-
-function createUser(username, password, email){
-    $.post("http://localhost:3000/users", {username: username, password: password, email: email});
-}
