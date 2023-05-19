@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentzHive Signup</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/top-menu.js" defer></script>
+    <script src="js/signup.js"></script>
+</head>
+<body>
+    <div id="top-menu">
+        <a href="index.html">
+            <img id="logo" src="images/logo.png" alt="Logo">
+        </a>
+        <a href="index.html">
+            <img id="big-logo" src="images/big-logo.png" alt="Big Logo">
+        </a>
+        <div id="account-dropdown">
+            <img id="account-icon" src="images/account-icon.png" alt="Account Icon">
+            <div id="account-menu">
+                <a href="login.html" data-login>Log In</a>
+                <a href="signup.html" data-signup>Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topSpacing"></div>
+
+    <div class="login-box">
+        <h2>Create an account</h2>
+        <p id="error-text"></p>
+        <input id="email" type="email" class="login-input" placeholder="Email..." spellcheck="false">
+        <input id="username" type="text" class="login-input" placeholder="Username..." spellcheck="false">
+        <input id="password" type="password" class="login-input" placeholder="Password..." spellcheck="false">
+        <div id="small-text">
+            Already signed up?
+            <a href="login.html">Log In</a>
+        </div>
+        <button class="login-button">Sing Up</button>
+    </div>
+</body>
+</html>

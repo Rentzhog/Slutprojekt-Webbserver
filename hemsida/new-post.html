@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentzHive New Post</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/top-menu.js" defer></script>
+    <script src="js/new-post.js" defer></script>
+</head>
+<body>
+    <div id="top-menu">
+        <a href="index.html">
+            <img id="logo" src="images/logo.png" alt="Logo">
+        </a>
+        <a href="index.html">
+            <img id="big-logo" src="images/big-logo.png" alt="Big Logo">
+        </a>
+        <div id="account-dropdown">
+            <img id="account-icon" src="images/account-icon.png" alt="Account Icon">
+            <div id="account-menu">
+                <a href="login.html" data-login>Log In</a>
+                <a href="signup.html" data-signup>Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="post-box">
+        <h2 id="new-post-header">Create a New Post</h2>
+        <input type="text" id="new-post-title" placeholder="Title" spellcheck="false">
+        <textarea id="new-post-content" placeholder="This post is about..." spellcheck="false"></textarea>
+        <div id="upload-image" data-img>
+            <input type="file" id="file" accept="image/*" hidden>
+            <img src="images/upload-image.png" alt="Upload Image">
+            <h3>Upload Image</h3>
+        </div>
+        <button id="submit-post">Post</button>
+    </div>
+</body>
+</html>
